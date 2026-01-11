@@ -1,0 +1,14 @@
+{
+  "name": "resistor-divider-calculator",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

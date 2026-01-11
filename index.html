@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DC/DC Feedback Resistor Calculator</title>
+    <title>Resistor Divider Calculator | Custom Electronics Design & Development | Oleg Serbinov</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Online DC/DC converter feedback resistor calculator. Calculate optimal R1 and R2 values for voltage divider networks in switching power supplies, buck converters, boost converters, and step-down regulators. Also offers Custom Electronics Design & Development services (PCB layout, embedded firmware, DFM, SolidWorks mechanical design).">
-    <meta name="keywords" content="feedback resistor calculator, DC/DC converter calculator, voltage divider calculator, resistor divider calculator, switching regulator calculator, buck converter resistor, boost converter resistor, step-down converter calculator, power supply feedback network, voltage reference calculator, R1 R2 calculator, feedback network calculator, switching power supply calculator, voltage regulator calculator, DC converter resistor values, power electronics calculator, resistor ratio calculator, voltage divider network, feedback loop calculator, switching converter design, SMPS resistor calculator, PWM controller feedback, LDO feedback network, adjustable regulator calculator, output voltage calculator, resistor selection tool, E24 resistor series, E96 resistor series, precision resistor calculator, standard resistor values, feedback circuit design, voltage setting resistors, dc-dc feedback design, switching mode power supply, power converter design, voltage regulation circuit, resistor tolerance calculator, feedback component calculator, electronic circuit calculator, power supply design tool, voltage converter calculator, switching topology calculator, buck boost converter, flyback converter feedback, forward converter resistor, half bridge converter, full bridge feedback network, resonant converter calculator, isolated converter feedback, non-isolated converter design, point of load regulator, module design calculator, embedded power supply, battery charger feedback, LED driver feedback, motor drive feedback, telecom power supply, server power calculator, automotive converter design, industrial power supply, medical device power, aerospace power design, custom electronics design, electronics R&D, full-cycle R&D, feasibility studies, prototyping, mass production, circuit design simulation, HDI PCB design, advanced PCB layout, signal integrity, EMC EMI, design for manufacturing, DFM services, Gerber files, pick-and-place data, cost-optimized BOMs, embedded firmware STM32, ESP32, bare-metal, RTOS, mechanical engineering SolidWorks, ECAD MCAD integration, thermal management, custom enclosure design">
-    <meta name="author" content="Oleg Serbinov">
+    <meta name="description" content="Free online resistor divider calculator with Custom Electronics Design & Development services. 20+ years expertise in PCB design, embedded firmware, mechanical engineering. Calculate R1/R2 from E24/E96/E192 series.">
+    <meta name="keywords" content="custom electronics design, electronics development services, PCB design services, embedded firmware development, resistor divider calculator, voltage divider calculator, R1 R2 calculator, E24, E96, E192, HDI PCB layout, STM32 firmware, ESP32 development, mechanical engineering, SolidWorks design, automotive electronics, industrial automation, medical device design, IoT electronics">    <meta name="author" content="Oleg Serbinov">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     
     <!-- Alternative Descriptions for Different Contexts -->
-    <meta name="description" lang="en-US" content="Free online feedback resistor calculator for DC/DC switching converters. Automatically selects R1 and R2 values from standard E24/E96 series for precise output voltage setting. Also provides Custom Electronics Design & Development services including PCB HDI layout, embedded firmware and mechanical design.">
-    <meta name="twitter:description" content="Calculate DC/DC converter feedback resistors R1 & R2. Supports buck, boost, and buck-boost topologies. Also offering custom electronics design, advanced PCB layout, embedded firmware and SolidWorks mechanical design.">
+    <meta name="description" lang="en-US" content="Free online resistor divider calculator. Automatically selects R1 and R2 values from standard E24/E96/E192 series for precise output voltage setting. Also provides Custom Electronics Design & Development services including PCB HDI layout, embedded firmware and mechanical design.">
+    <meta name="twitter:description" content="Calculate resistor divider values R1 & R2. Supports E24, E96 and E192 series. Includes power and tolerance analysis, and recommendations for packages.">
     
     <!-- Geographic and Topical Variations -->
     <meta name="geo.region" content="Worldwide">
@@ -24,24 +23,24 @@
     <meta name="category" content="Engineering Software, Circuit Design, Power Supply Tools">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="DC/DC Feedback Resistor Calculator | R1 R2 Calculator for Switching Power Supplies">
-    <meta property="og:description" content="Calculate optimal feedback resistor values for DC/DC converters. Free online tool for voltage divider networks in switching power supplies. Supports E24/E96 standard resistor series.">
+    <meta property="og:title" content="Resistor Divider Calculator | Voltage Divider R1/R2 Calculator">
+    <meta property="og:description" content="Online tool to calculate resistive voltage divider values (R1, R2) with standard resistor selection, power and tolerance analysis.">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Feedback Resistor Calculator">
+    <meta property="og:site_name" content="Resistor Divider Calculator">
     <meta property="og:image" content="https://serbinov.github.io/Feedback-resistor-calculator-for-DC-DC/image.png">
-    <meta property="og:image:alt" content="DC/DC Converter Feedback Resistor Circuit Diagram">
+    <meta property="og:image:alt" content="Resistive voltage divider diagram">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DC/DC Feedback Resistor Calculator - Free Online Tool">
-    <meta name="twitter:description" content="Calculate DC/DC converter feedback resistors R1 & R2. Supports buck, boost, and buck-boost topologies with standard resistor selection from E24/E96 series.">
+    <meta name="twitter:title" content="Resistor Divider Calculator - Free Online Tool">
+    <meta name="twitter:description" content="Calculate resistive divider values R1 & R2 with standard resistor selection and power/tolerance analysis.">
     <meta name="twitter:image" content="https://serbinov.github.io/Feedback-resistor-calculator-for-DC-DC/image.png">
-    <meta name="twitter:image:alt" content="Feedback resistor calculator interface">
+    <meta name="twitter:image:alt" content="Resistor divider calculator interface">
     <meta name="twitter:creator" content="@OlegSerbinov">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="application-name" content="DC/DC Feedback Resistor Calculator">
+    <meta name="application-name" content="Resistor Divider Calculator">
     <meta name="theme-color" content="#3498db">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,9 +49,9 @@
     <meta name="format-detection" content="telephone=no">
     
     <!-- Canonical and Alternate Languages -->
-    <link rel="canonical" href="https://serbinov.github.io/Feedback-resistor-calculator-for-DC-DC/">
-    <link rel="alternate" hreflang="en" href="https://serbinov.github.io/Feedback-resistor-calculator-for-DC-DC/">
-    <link rel="alternate" hreflang="x-default" href="https://serbinov.github.io/Feedback-resistor-calculator-for-DC-DC/">
+    <link rel="canonical" href="https://serbinov.github.io/Resistor-divider-calculator/">
+    <link rel="alternate" hreflang="en" href="https://serbinov.github.io/Resistor-divider-calculator/">
+    <link rel="alternate" hreflang="x-default" href="https://serbinov.github.io/Resistor-divider-calculator/">
     
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     
@@ -71,12 +70,12 @@
     {
         "@context": "https://schema.org",
         "@type": ["WebApplication", "SoftwareApplication", "Calculator"],
-        "name": "DC/DC Feedback Resistor Calculator",
-        "alternateName": ["Switching Regulator Feedback Calculator", "R1 R2 Voltage Divider Calculator", "Power Supply Feedback Network Calculator"],
-        "description": "Professional online calculator for determining optimal feedback resistor values (R1 and R2) in DC/DC converter circuits. Supports automatic resistor selection from standard E24 and E96 series, manual input, and single resistor calculation modes.",
-        "url": "https://serbinov.github.io/Feedback-resistor-calculator-for-DC-DC/",
-        "image": "https://serbinov.github.io/Feedback-resistor-calculator-for-DC-DC/image.png",
-        "screenshot": "https://serbinov.github.io/Feedback-resistor-calculator-for-DC-DC/image.png",
+        "name": "Resistor Divider Calculator",
+        "alternateName": ["Voltage Divider Calculator", "R1 R2 Voltage Divider Calculator", "Resistive Divider Tool"],
+        "description": "Online tool to calculate resistive voltage divider values (R1 and R2), select standard resistor values from E24/E96/E192, and evaluate power and tolerance effects.",
+        "url": "https://serbinov.github.io/Resistor-divider-calculator/",
+        "image": "https://serbinov.github.io/Resistor-divider-calculator/image.png",
+        "screenshot": "https://serbinov.github.io/Resistor-divider-calculator/image.png",
         "author": {
             "@type": "Person",
             "name": "Oleg Serbinov",
@@ -172,18 +171,25 @@
             padding: 10px;
             line-height: 1.5;
             font-size: 14px;
+            background-color: #f4f4f4;
         }
         .section {
             margin-bottom: 20px;
             padding: 15px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         h1 {
             font-size: 20px;
             color: #2c3e50;
             text-align: center;
             margin-bottom: 15px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
         }
         .input-row {
             margin-bottom: 12px;
@@ -317,10 +323,14 @@
         .circuit-image {
             text-align: center;
             margin: 15px 0;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
         }
         
         .circuit-image img {
-            max-width: 60%;
+            max-width: 30%; /* reduced by ~2x */
             height: auto;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -328,13 +338,14 @@
         }
         
         .description {
-            background-color: #f8f9fa;
+            background-color: #e8f4fd;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 8px;
             margin-bottom: 20px;
             font-size: 14px;
             line-height: 1.6;
             border-left: 4px solid #3498db;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
         }
         
         .developer-info {
@@ -344,6 +355,9 @@
             border-top: 1px solid #e0e0e0;
             font-size: 13px;
             color: #666;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
         }
         
         .developer-info a {
@@ -455,7 +469,7 @@
             }
             
             .circuit-image img {
-                max-width: 90%;
+                max-width: 45%; /* reduced by ~2x on small screens */
             }
         }
         
@@ -535,53 +549,60 @@
     </style>
 </head>
 <body>
-    <h1>Feedback Resistor Calculator</h1>
-    
-    <div class="description">
-        <strong>DC/DC Feedback Resistor Calculator</strong><br>
-        This calculator helps you determine the optimal feedback resistor values (R1 and R2) for DC/DC converter circuits. 
-        The feedback network creates a voltage divider that sets the output voltage according to the formula: 
-        <strong>V<sub>out</sub> = V<sub>ref</sub> × (1 + R1/R2)</strong>. 
-        Choose from automatic selection with standard resistor values, specify one known resistor, or manually enter both values.
-    </div>
-    
-    <div class="circuit-image">
-        <img src="image.png" alt="DC/DC Feedback Resistor Circuit Diagram" title="Feedback resistor circuit showing R1 (upper) and R2 (lower) configuration">
-    </div>
-
     <div class="section">
+        <h1>Resistor Divider Calculator</h1>
+        
+        <div class="description">
+            <strong>Resistive Voltage Divider Calculator</strong><br>
+            This calculator helps you design a two-resistor voltage divider (R1 upper, R2 lower).
+            The divider sets the output voltage according to the formula:
+            <strong>V<sub>out</sub> = V<sub>in</sub> × R2 / (R1 + R2)</strong>.
+            Work modes: 1) known Vin & Vout (auto select standard resistors), 2) manual resistor entry, 3) known division ratio.
+        </div>
+        
+        <div class="circuit-image">
+            <img src="image.png" alt="Resistive Divider Circuit Diagram" title="Resistive divider showing R1 (upper) and R2 (lower) configuration">
+        </div>
+
         <div class="input-row">
-            <label for="vref">Reference Voltage (Vref/FB)</label>
+            <label for="vin">Input Voltage (Vin)</label>
             <div class="input-with-unit move-left">
-                <input type="number" id="vref" step="0.001" value="0.6" min="0.1" max="10">
+                <input type="number" id="vin" step="0.0001" value="5.0000" min="0.0001" max="1000">
                 <span class="unit">V</span>
             </div>
         </div>
         
-        <div class="input-row">
-            <label for="vref_tol">Vref Tolerance (%)</label>
-            <div class="input-with-unit move-left">
-                <input type="number" id="vref_tol" step="0.1" value="0.1" min="0" max="10">
-                <span class="unit">%</span>
-            </div>
-        </div>
-        
+
         <div class="input-row">
             <label for="vout_desired">Output Voltage</label>
             <div class="input-with-unit move-left">
-                <input type="number" id="vout_desired" step="0.001" value="3.3" min="0.1" max="50">
+                <input type="number" id="vout_desired" step="0.0001" value="3.3000" min="0.0001" max="1000">
                 <span class="unit">V</span>
             </div>
         </div>
         
         <div class="input-row">
-            <label for="resistor_tolerance">Resistor Series</label>
+            <label for="rload">Load Resistance (optional)</label>
+            <div class="input-with-unit move-left">
+                <input type="number" id="rload" step="0.01" value="" placeholder="" min="0">
+                <span class="unit">kΩ</span>
+            </div>
+        </div>
+        
+        <div class="input-row">
+            <label for="resistor_tolerance">Resistor Series / Tolerance</label>
             <select id="resistor_tolerance" class="move-left">
-                <option value="1">1% (E96 series)</option>
-                <option value="5">5% (E24 series)</option>
-                <option value="both">5%, 1% (E24, E96)</option>
+                <option value="5">5% (E24)</option>
+                <option value="1" selected>1% (E96)</option>
+                <option value="0.5">0.5% (E192)</option>
+                <option value="0.25">0.25% (E192)</option>
+                <option value="0.1">0.1% (E192)</option>
+                <option value="all">All (E192 + E96 + E24)</option>
             </select>
         </div>
+
+
+
         
         <div class="input-row">
             <label for="ppm_r1">PPM for R1 (upper)</label>
@@ -599,61 +620,65 @@
             </div>
         </div>
 
-        <div class="tabs">
-            <div class="tab active" onclick="showTab('auto')">Auto Selection</div>
-            <div class="tab" onclick="showTab('single')">One Resistor</div>
-            <div class="tab" onclick="showTab('manual')">Manual Input</div>
-        </div>
-
-        <div id="auto-tab" class="tab-content active">
-            <div class="input-row range-row">
+        <div class="input-row range-row">
                 <label>Resistor Range</label>
-                <div class="range-inputs">
-                    <div class="input-with-unit">
-                        <input type="number" id="min_resistor" step="0.1" value="1" placeholder="Min">
-                        <span class="unit">kΩ</span>
-                    </div>
-                    <span class="range-separator">to</span>
-                    <div class="input-with-unit">
-                        <input type="number" id="max_resistor" step="0.1" value="100" placeholder="Max">
-                        <span class="unit">kΩ</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="single-tab" class="tab-content">
-            <div class="input-row">
-                <label for="known_resistor_pos">Known Resistor</label>
-                <select id="known_resistor_pos">
-                    <option value="r1">R1 (upper)</option>
-                    <option value="r2">R2 (lower)</option>
-                </select>
-            </div>
-            <div class="input-row">
-                <label for="known_resistor_value">Resistor Value</label>
                 <div class="input-with-unit">
-                    <input type="number" id="known_resistor_value" step="0.01" value="10">
+                    <input type="number" id="min_resistor" step="0.1" value="1" placeholder="Min">
+                    <span class="unit">kΩ</span>
+                </div>
+                <span class="range-separator">to</span>
+                <div class="input-with-unit">
+                    <input type="number" id="max_resistor" step="0.1" value="100" placeholder="Max">
                     <span class="unit">kΩ</span>
                 </div>
             </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('auto')">Auto Selection</div>
+            <div class="tab" onclick="showTab('manual')">Manual Input</div>
+            <div class="tab" onclick="showTab('ratio')">Division Ratio</div>
+        </div>
+
+        <div id="auto-tab" class="tab-content active">
+            <div style="margin:6px 0;color:#666;font-size:13px;">Auto mode uses the resistor range above (defaults shown in kΩ).</div>
         </div>
 
         <div id="manual-tab" class="tab-content">
             <div class="input-row">
                 <label for="r1_manual">R1 (upper)</label>
-                <div class="input-with-unit">
-                    <input type="number" id="r1_manual" step="0.01" value="10">
+                <div class="input-with-unit move-left">
+                    <input type="number" id="r1_manual" step="0.01" value="4.7">
                     <span class="unit">kΩ</span>
                 </div>
             </div>
             <div class="input-row">
                 <label for="r2_manual">R2 (lower)</label>
-                <div class="input-with-unit">
+                <div class="input-with-unit move-left">
                     <input type="number" id="r2_manual" step="0.01" value="10">
                     <span class="unit">kΩ</span>
                 </div>
             </div>
+            <div style="margin:6px 0;color:#666;font-size:13px;">Manual input: enter R1 and R2 values, and either Vin or Vout for calculation.</div>
+        </div>
+
+        <div id="ratio-tab" class="tab-content">
+            <div class="input-row">
+                <label for="division_ratio">Division coefficient (R2/(R1+R2))</label>
+                <div class="input-with-unit move-left">
+                    <input type="number" id="division_ratio" step="0.0001" value="0.6600" min="0.0001" max="0.9999">
+                </div>
+            </div>
+            <div class="input-row">
+                <label for="known_voltage">Known voltage</label>
+                <div class="input-with-unit move-left">
+                    <select id="known_voltage">
+                        <option value="vin">Vin</option>
+                        <option value="vout">Vout</option>
+                    </select>
+                </div>
+            </div>
+            <div style="margin:6px 0;color:#666;font-size:13px;">Division ratio mode: set the ratio and known voltage (Vin or Vout) to calculate the other.</div>
         </div>
         
         <button onclick="calculateResistors()">Calculate</button>
@@ -677,6 +702,18 @@
                     5.62, 5.76, 5.90, 6.04, 6.19, 6.34, 6.49, 6.65, 6.81, 6.98, 7.15, 7.32, 
                     7.50, 7.68, 7.87, 8.06, 8.25, 8.45, 8.66, 8.87, 9.09, 9.31, 9.53, 9.76];
 
+        function generateESeries(m, sig) {
+            const arr = [];
+            for (let n = 0; n < m; n++) {
+                const v = Math.pow(10, n / m);
+                const rounded = Number(v.toPrecision(sig));
+                arr.push(rounded);
+            }
+            return Array.from(new Set(arr.map(x => Number(x.toFixed(3))))).sort((a,b)=>a-b);
+        }
+
+        const E192 = generateESeries(192, 3);
+
         function showTab(tabName) {
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
@@ -693,8 +730,10 @@
                 return seriesArr.some(x => Math.abs(x - normalized) < 0.001) ? seriesName : null;
             };
 
-            if (tolerance === 'both') {
-                return checkSeries(E96, 'E96') || checkSeries(E24, 'E24') || null;
+            if (tolerance === 'all') {
+                return checkSeries(E192,'E192') || checkSeries(E96, 'E96') || checkSeries(E24, 'E24') || null;
+            } else if (tolerance === '0.5' || tolerance === '0.25' || tolerance === '0.1') {
+                return checkSeries(E192,'E192') || null;
             } else if (tolerance === '1') {
                 return checkSeries(E96, 'E96') || null;
             } else {
@@ -722,13 +761,17 @@
                 return { value: closest * decade, series: seriesName, diff: Math.abs(closest * decade - value) };
             };
 
-            if (tolerance === 'both') {
-                const cand1 = searchInSeries(E96, 'E96');
-                const cand2 = searchInSeries(E24, 'E24');
-                if (cand1.diff < cand2.diff) return { value: cand1.value, series: cand1.series };
-                if (cand2.diff < cand1.diff) return { value: cand2.value, series: cand2.series };
-                // tie-breaker prefer higher precision E96
-                return { value: Math.min(cand1.value, cand2.value), series: 'E96' };
+            if (tolerance === 'all') {
+                const cand192 = searchInSeries(E192, 'E192');
+                const cand96 = searchInSeries(E96, 'E96');
+                const cand24 = searchInSeries(E24, 'E24');
+                let best = cand192;
+                if (cand96.diff < best.diff) best = cand96;
+                if (cand24.diff < best.diff) best = cand24;
+                return { value: best.value, series: best.series };
+            } else if (tolerance === '0.5' || tolerance === '0.25' || tolerance === '0.1') {
+                const c = searchInSeries(E192, 'E192');
+                return { value: c.value, series: c.series };
             } else if (tolerance === '1') {
                 const c = searchInSeries(E96, 'E96');
                 return { value: c.value, series: c.series };
@@ -769,6 +812,38 @@
                 return `${(current * 1000000).toFixed(1)} µA`;
             }
         }
+
+
+
+        function copyToClipboard(val) {
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(String(val));
+                    // small non-blocking notification
+                    const n = document.createElement('div');
+                    n.textContent = 'Copied: ' + formatResistorValue(val);
+                    n.style.position = 'fixed'; n.style.right = '20px'; n.style.bottom = '20px'; n.style.background = '#222'; n.style.color = '#fff'; n.style.padding = '8px 10px'; n.style.borderRadius = '6px';
+                    document.body.appendChild(n);
+                    setTimeout(()=>n.remove(), 1500);
+                } else {
+                    window.prompt('Copy resistor value (ohms):', String(val));
+                }
+            } catch (e) {
+                window.prompt('Copy resistor value (ohms):', String(val));
+            }
+        }
+
+        function useSeriesValue(val, which) {
+            const el = document.getElementById(which === 'r1' ? 'r1_manual' : 'r2_manual');
+            if (!el) return;
+            el.value = (val / 1000).toFixed(3);
+            showTab('manual');
+            if (which === 'r1') window._lastSelectedR1 = val; else window._lastSelectedR2 = val;
+        }
+
+
+
+
 
         function getRecommendedPowerRating(actualPower) {
             // Рекомендуем резистор с мощностью в 2-3 раза больше расчетной для надежности
@@ -868,47 +943,70 @@
         }
 
         function calculateResistors() {
-            const vref = parseFloat(document.getElementById('vref').value.replace(',', '.'));
-            const voutDesired = parseFloat(document.getElementById('vout_desired').value.replace(',', '.'));
-            const tolerance = document.getElementById('resistor_tolerance').value; // '1', '5', or 'both'
+            let vin = parseFloat(document.getElementById('vin').value.replace(',', '.'));
+            let voutDesired = parseFloat(document.getElementById('vout_desired').value.replace(',', '.'));
+            const activeTab = document.querySelector('.tab.active').getAttribute('onclick').replace("showTab('", "").replace("')", "");
+            const rloadEl = document.getElementById('rload');
+            const rloadRaw = rloadEl ? String(rloadEl.value).replace(',', '.') : '';
+            const rload = rloadRaw === '' ? Infinity : parseFloat(rloadRaw) * 1000; // input in kΩ -> ohm
+            const useLoad = Number.isFinite(rload) && !isNaN(rload) && rload > 0;
+            const tolerance = document.getElementById('resistor_tolerance').value; // '1','5','0.5','0.25','0.1','all'
             let toleranceText;
-            let vref_tol = 0.1;
-            if (tolerance === '1') toleranceText = "1% (E96 series)";
-            else if (tolerance === '5') toleranceText = "5% (E24 series)";
-            else toleranceText = "E96 + E24 (choose best)";
+
+
+
+            if (tolerance === '1') toleranceText = "1% (E96)";
+            else if (tolerance === '5') toleranceText = "5% (E24)";
+            else if (tolerance === '0.5') toleranceText = "0.5% (E192)";
+            else if (tolerance === '0.25') toleranceText = "0.25% (E192)";
+            else if (tolerance === '0.1') toleranceText = "0.1% (E192)";
+            else toleranceText = "E192 + E96 + E24 (choose best)";
             
-            if (isNaN(vref) || isNaN(voutDesired)) {
+            if (activeTab !== 'manual' && isNaN(vin)) {
                 document.getElementById('resistor_result').innerHTML = 
-                    '<span class="error">Please enter valid voltage values</span>';
+                    '<span class="error">Please enter valid input voltage</span>';
                 return;
             }
             
-            if (voutDesired <= vref) {
+            if (activeTab !== 'manual' && isNaN(voutDesired)) {
                 document.getElementById('resistor_result').innerHTML = 
-                    '<span class="error">Output voltage must be greater than reference voltage</span>';
+                    '<span class="error">Please enter valid output voltage</span>';
+                return;
+            }
+            
+            if (activeTab !== 'manual' && !isNaN(voutDesired) && !isNaN(vin) && voutDesired >= vin) {
+                document.getElementById('resistor_result').innerHTML = 
+                    '<span class="error">Output voltage must be less than input voltage</span>';
                 return;
             }
             
             let r1, r2, r1Series = null, r2Series = null;
-            const targetRatio = (voutDesired / vref) - 1;
-            const activeTab = document.querySelector('.tab.active').getAttribute('onclick').replace("showTab('", "").replace("')", "");
+            let targetRatio = 0;
+            if (!isNaN(vin) && !isNaN(voutDesired) && voutDesired > 0) {
+                targetRatio = (vin / voutDesired) - 1; // R1/R2
+            }
+
+            // Resistor range (kΩ) - applies to all modes
+            const minRk = parseFloat(document.getElementById('min_resistor').value.replace(',', '.')) || 1;
+            const maxRk = parseFloat(document.getElementById('max_resistor').value.replace(',', '.')) || 100;
+            const minR = minRk * 1000;
+            const maxR = maxRk * 1000;
+            if (isNaN(minR) || isNaN(maxR) || minR >= maxR || minR <= 0 || maxR <= 0) {
+                document.getElementById('resistor_result').innerHTML = 
+                    '<span class="error">Please enter valid resistor range (min &lt; max; values in kΩ)</span>';
+                return;
+            }
+
+            const seriesList = [];
+            if (tolerance === '1') seriesList.push({arr: E96, name: 'E96'});
+            else if (tolerance === '5') seriesList.push({arr: E24, name: 'E24'});
+            else if (tolerance === '0.5' || tolerance === '0.25' || tolerance === '0.1') seriesList.push({arr: E192, name: 'E192'});
+            else if (tolerance === 'all') { seriesList.push({arr: E192, name: 'E192'}); seriesList.push({arr: E96, name: 'E96'}); seriesList.push({arr: E24, name: 'E24'}); }
+            else { seriesList.push({arr: E96, name: 'E96'}); seriesList.push({arr: E24, name: 'E24'}); }
 
             if (activeTab === 'auto') {
-                const minR = parseFloat(document.getElementById('min_resistor').value.replace(',', '.')) * 1000;
-                const maxR = parseFloat(document.getElementById('max_resistor').value.replace(',', '.')) * 1000;
-                
-                if (isNaN(minR) || isNaN(maxR) || minR >= maxR || minR <= 0 || maxR <= 0) {
-                    document.getElementById('resistor_result').innerHTML = 
-                        '<span class="error">Please enter valid resistor range</span>';
-                    return;
-                }
-
-                const seriesList = [];
-                if (tolerance === '1') seriesList.push({arr: E96, name: 'E96'});
-                else if (tolerance === '5') seriesList.push({arr: E24, name: 'E24'});
-                else { seriesList.push({arr: E96, name: 'E96'}); seriesList.push({arr: E24, name: 'E24'}); }
-
                 let bestR1 = 0, bestR2 = 0, bestR1Series = null, bestR2Series = null, minError = Infinity;
+                const candidates = [];
                 
                 for (let decade = Math.pow(10, Math.floor(Math.log10(minR))); decade <= maxR*10; decade *= 10) {
                     for (const seriesObj of seriesList) {
@@ -920,19 +1018,56 @@
                             if (r1Candidate < minR || r1Candidate > maxR) continue;
                             
                             const r1StdObj = findClosestResistor(r1Candidate, tolerance);
-                            const actualVout = vref * (1 + r1StdObj.value / r2Candidate);
+                            const r1Val = r1StdObj.value;
+                            const r1SeriesName = r1StdObj.series || seriesObj.name;
+                            const unloadedVout = vin * (r2Candidate / (r1Val + r2Candidate));
+                            let effectiveR2 = r2Candidate;
+                            if (useLoad) effectiveR2 = 1 / (1 / r2Candidate + 1 / rload);
+                            const loadedVout = vin * (effectiveR2 / (r1Val + effectiveR2));
+                            const actualVout = useLoad ? loadedVout : unloadedVout;
                             const error = Math.abs(actualVout - voutDesired);
+                            const relError = error / voutDesired * 100;
+                            const totalResistanceCandidate = r1Val + effectiveR2;
+                            const dividerCurrentCandidate = actualVout / totalResistanceCandidate;
+                            const powerR1Candidate = Math.pow(dividerCurrentCandidate, 2) * r1Val;
+                            const powerR2Candidate = Math.pow(dividerCurrentCandidate, 2) * r2Candidate;
+                            const loadCurrentCandidate = useLoad ? (loadedVout / rload) : 0;
                             
-                            if (error < minError) {
-                                minError = error;
-                                bestR1 = r1StdObj.value;
-                                bestR1Series = r1StdObj.series;
-                                bestR2 = r2Candidate;
-                                bestR2Series = seriesObj.name;
-                            }
+                            candidates.push({
+                                r1: r1Val,
+                                r2: r2Candidate,
+                                r1Series: r1SeriesName,
+                                r2Series: seriesObj.name,
+                                unloadedVout,
+                                actualVout,
+                                absError: error,
+                                relError,
+                                dividerCurrent: dividerCurrentCandidate,
+                                powerR1: powerR1Candidate,
+                                powerR2: powerR2Candidate,
+                                loadCurrent: loadCurrentCandidate
+                            });
                         }
                     }
                 }
+                // sort by absolute error then relative
+                candidates.sort((a,b) => a.absError - b.absError || a.relError - b.relError);
+                const topCandidates = candidates.slice(0, 10);
+                // store for top-3 display
+                window._lastCandidates = topCandidates;
+                if (topCandidates.length === 0) {
+                    document.getElementById('resistor_result').innerHTML = 
+                        '<span class="error">Could not find resistors within specified range</span>';
+                    return;
+                }
+                const best = topCandidates[0];
+                bestR1 = best.r1;
+                bestR2 = best.r2;
+                bestR1Series = best.r1Series;
+                bestR2Series = best.r2Series;
+                // make sure last selected reflects best (used for highlight)
+                window._lastSelectedR1 = best.r1;
+                window._lastSelectedR2 = best.r2;
                 
                 if (bestR1 === 0 || bestR2 === 0) {
                     document.getElementById('resistor_result').innerHTML = 
@@ -944,36 +1079,11 @@
                 r2 = bestR2;
                 r1Series = bestR1Series;
                 r2Series = bestR2Series;
+                // remember for series table highlighting (values are in ohms)
+                window._lastSelectedR1 = r1;
+                window._lastSelectedR2 = r2; 
             } 
-            else if (activeTab === 'single') {
-                const knownPos = document.getElementById('known_resistor_pos').value;
-                const knownValue = parseFloat(document.getElementById('known_resistor_value').value.replace(',', '.')) * 1000;
-                
-                if (isNaN(knownValue) || knownValue <= 0) {
-                    document.getElementById('resistor_result').innerHTML = 
-                        '<span class="error">Please enter valid resistor value</span>';
-                    return;
-                }
-                
-                if (knownPos === 'r1') {
-                    r1 = knownValue;
-                    r2 = r1 / targetRatio;
-                } else {
-                    r2 = knownValue;
-                    r1 = r2 * targetRatio;
-                }
-                
-                r1Series = getSeriesForValue(r1/1000, tolerance);
-                r2Series = getSeriesForValue(r2/1000, tolerance);
-                
-                const r1Obj = findClosestResistor(r1, tolerance);
-                r1 = r1Obj.value;
-                r1Series = r1Obj.series || r1Series;
-                const r2Obj = findClosestResistor(r2, tolerance);
-                r2 = r2Obj.value;
-                r2Series = r2Obj.series || r2Series;
-            } 
-            else {
+            else if (activeTab === 'manual') {
                 r1 = parseFloat(document.getElementById('r1_manual').value.replace(',', '.')) * 1000;
                 r2 = parseFloat(document.getElementById('r2_manual').value.replace(',', '.')) * 1000;
                 
@@ -983,156 +1093,263 @@
                     return;
                 }
                 
+                // Check which voltage is provided
+                const hasVin = !isNaN(vin) && vin > 0;
+                const hasVout = !isNaN(voutDesired) && voutDesired > 0;
+                
+                if (!hasVin && !hasVout) {
+                    document.getElementById('resistor_result').innerHTML = 
+                        '<span class="error">Please enter either Vin or Vout</span>';
+                    return;
+                }
+                
+                // Calculate the missing voltage based on R1 and R2
+                if (hasVout && !hasVin) {
+                    // Calculate Vin from Vout, R1, R2
+                    vin = voutDesired * (r1 + r2) / r2;
+                    document.getElementById('vin').value = vin.toFixed(4);
+                } else if (hasVin && !hasVout) {
+                    // Calculate Vout from Vin, R1, R2
+                    voutDesired = vin * r2 / (r1 + r2);
+                    document.getElementById('vout_desired').value = voutDesired.toFixed(4);
+                } else if (hasVin && hasVout) {
+                    // Both provided - recalculate Vout from Vin, R1, R2 (Vin takes priority)
+                    voutDesired = vin * r2 / (r1 + r2);
+                    document.getElementById('vout_desired').value = voutDesired.toFixed(4);
+                }
+                
                 r1Series = getSeriesForValue(r1/1000, tolerance);
                 r2Series = getSeriesForValue(r2/1000, tolerance);
                 
-                const r1Obj = findClosestResistor(r1, tolerance);
-                r1 = r1Obj.value;
-                r1Series = r1Obj.series || r1Series;
-                const r2Obj = findClosestResistor(r2, tolerance);
-                r2 = r2Obj.value;
-                r2Series = r2Obj.series || r2Series;
+                // For manual input, use exact values without snapping to standard
+                // Note: range validation is optional for manual mode, commenting out
+                // if (r1 < minR || r1 > maxR || r2 < minR || r2 > maxR) {
+                //     document.getElementById('resistor_result').innerHTML = '<span class="error">Resistor values are outside the specified range</span>';
+                //     return;
+                // }
+            }
+            else if (activeTab === 'ratio') {
+                const divisionRatio = parseFloat(document.getElementById('division_ratio').value);
+                const knownVoltage = document.getElementById('known_voltage').value;
+                
+                if (!divisionRatio || divisionRatio <= 0 || divisionRatio >= 1) {
+                    document.getElementById('resistor_result').innerHTML = '<span class="error">Please enter valid division ratio (0 &lt; ratio &lt; 1)</span>';
+                    return;
+                }
+                
+                if (knownVoltage === 'vin') {
+                    if (isNaN(vin) || vin <= 0) {
+                        document.getElementById('resistor_result').innerHTML = '<span class="error">Please enter valid Vin</span>';
+                        return;
+                    }
+                    // Calculate Vout from Vin and division ratio, but don't update the field
+                    voutDesired = vin * divisionRatio;
+                    // Only update if field is empty
+                    if (document.getElementById('vout_desired').value === '' || document.getElementById('vout_desired').value === '0') {
+                        document.getElementById('vout_desired').value = voutDesired.toFixed(4);
+                    }
+                } else {
+                    if (isNaN(voutDesired) || voutDesired <= 0) {
+                        document.getElementById('resistor_result').innerHTML = '<span class="error">Please enter valid Vout</span>';
+                        return;
+                    }
+                    // Calculate Vin from Vout and division ratio, but don't update the field
+                    vin = voutDesired / divisionRatio;
+                    // Only update if field is empty
+                    if (document.getElementById('vin').value === '' || document.getElementById('vin').value === '0') {
+                        document.getElementById('vin').value = vin.toFixed(4);
+                    }
+                }
+                
+                // Now calculate r1/r2 from vin/vout
+                const targetRatio = (vin / voutDesired) - 1;
+                // Find best r1/r2 in range
+                let bestError = Infinity;
+                let bestR1 = null, bestR2 = null, bestR1Series = null, bestR2Series = null;
+                for (let decade = Math.pow(10, Math.floor(Math.log10(minR))); decade <= maxR*10; decade *= 10) {
+                    for (const seriesObj of seriesList) {
+                        for (const value of seriesObj.arr) {
+                            const r2Candidate = value * decade;
+                            if (r2Candidate < minR || r2Candidate > maxR) continue;
+                            
+                            const r1Candidate = r2Candidate * targetRatio;
+                            if (r1Candidate < minR || r1Candidate > maxR) continue;
+                            
+                            const r1StdObj = findClosestResistor(r1Candidate, tolerance);
+                            const r1Val = r1StdObj.value;
+                            const r1SeriesName = r1StdObj.series || seriesObj.name;
+                            const r2StdObj = findClosestResistor(r2Candidate, tolerance);
+                            const r2Val = r2StdObj.value;
+                            const r2SeriesName = r2StdObj.series || seriesObj.name;
+                            
+                            const unloadedVout = vin * (r2Val / (r1Val + r2Val));
+                            const error = Math.abs(unloadedVout - voutDesired);
+                            if (error < bestError) {
+                                bestError = error;
+                                bestR1 = r1Val;
+                                bestR2 = r2Val;
+                                bestR1Series = r1SeriesName;
+                                bestR2Series = r2SeriesName;
+                            }
+                        }
+                    }
+                }
+                if (bestR1 === null) {
+                    document.getElementById('resistor_result').innerHTML = '<span class="error">No suitable resistor combination found in range</span>';
+                    return;
+                }
+                r1 = bestR1;
+                r2 = bestR2;
+                r1Series = bestR1Series;
+                r2Series = bestR2Series;
             }
             
-            const voutActual = vref * (1 + r1 / r2);
-            const error = Math.abs(voutActual - voutDesired) / voutDesired * 100;
-            
-            // Расчет тока и мощности
-            const totalResistance = r1 + r2; // Ом
+            const unloadedVout = vin * (r2 / (r1 + r2));
+            const r2_effective = useLoad ? 1 / (1 / r2 + 1 / rload) : r2;
+            const voutLoaded = vin * (r2_effective / (r1 + r2_effective));
+            const voutActual = useLoad ? voutLoaded : unloadedVout;
+            const error = !isNaN(voutDesired) ? Math.abs(voutActual - voutDesired) / voutDesired * 100 : 0;
+
+            // prepare ppm values for variation calculations
+            const ppm_r1 = parseFloat(document.getElementById('ppm_r1').value.replace(',', '.')) || 0;
+            const ppm_r2 = parseFloat(document.getElementById('ppm_r2').value.replace(',', '.')) || 0;
+
+            // helper: compute min/max vout for given r1/r2 considering tolerance and ppm/temperature
+            function computeVoutVariation(r1v, r2v, r1s, r2s) {
+                // tolerance per resistor based on series
+                const tolForSeries = (series, tolSelection) => {
+                    if (series === 'E192') return (tolSelection === '0.5' ? 0.005 : (tolSelection === '0.25' ? 0.0025 : (tolSelection === '0.1' ? 0.001 : 0.005)));
+                    if (series === 'E96') return 0.01;
+                    return 0.05; // E24 and default
+                };
+                const tr1 = tolForSeries(r1s, tolerance);
+                const tr2 = tolForSeries(r2s, tolerance);
+                const temps = [-40, 0, 25, 85];
+                let all = [];
+                for (const t of temps) {
+                    const dT = t - 25;
+                    const r1_temp = r1v * (1 + (ppm_r1 / 1e6) * dT);
+                    const r2_temp = r2v * (1 + (ppm_r2 / 1e6) * dT);
+                    const r1min = r1_temp * (1 - tr1); const r1max = r1_temp * (1 + tr1);
+                    const r2min = r2_temp * (1 - tr2); const r2max = r2_temp * (1 + tr2);
+                    const vouts = [
+                        vin * (r2min / (r1min + r2min)),
+                        vin * (r2max / (r1min + r2max)),
+                        vin * (r2min / (r1max + r2min)),
+                        vin * (r2max / (r1max + r2max))
+                    ];
+                    all.push(...vouts);
+                }
+                return { minV: Math.min(...all), maxV: Math.max(...all) };
+            }
+
+            // Current and power calculations (use effective network)
+            const totalResistance = r1 + r2_effective; // Ohm
             const dividerCurrent = voutActual / totalResistance; // A
             const powerR1 = Math.pow(dividerCurrent, 2) * r1; // W
+            // power on R2 remains based on current thru R2 (note in loaded case some current goes to load)
             const powerR2 = Math.pow(dividerCurrent, 2) * r2; // W
             const totalPower = powerR1 + powerR2; // W
-            
-            let result = `<strong>Results:</strong><br><br>`;
-            result += `<strong>Target V<sub>out</sub>:</strong> ${voutDesired.toFixed(3)} V<br>`;
-            result += `<strong>Actual V<sub>out</sub>:</strong> ${voutActual.toFixed(3)} V (error ${error.toFixed(2)}%)<br><br>`;
-            
-            result += `<strong>R1 (upper):</strong> ${formatResistorValue(r1)}`;
-            if (r1Series) result += ` <span class="standard-value">(${r1Series} series)</span>`;
-            result += `<br>`;
-            
-            result += `<strong>R2 (lower):</strong> ${formatResistorValue(r2)}`;
-            if (r2Series) result += ` <span class="standard-value">(${r2Series} series)</span>`;
-            result += `<br>`;
-            result += `<hr style="border: none; border-top: 1px solid #ddd; margin: 10px 0;">`;
-            
-            result += `<strong>Detailed calculations including factors affecting the output voltage:</strong><br>`;
-            result += `Below are detailed calculations considering factors: resistor tolerance, temperature, Vref tolerance.<br><br>`;
-            
-            // Tolerance variations
-            const tol_r1 = r1Series === 'E96' ? 0.01 : 0.05;
-            const tol_r2 = r2Series === 'E96' ? 0.01 : 0.05;
-            result += `<strong>Output Voltage Variations due to Resistor Tolerance:</strong><br>`;
-            result += `These are the possible output voltages considering the tolerance of the resistors. All combinations of minimum and maximum values for R1 and R2 are shown.<br>`;
-            result += `R1 tolerance: ${(tol_r1 * 100).toFixed(0)}%, R2 tolerance: ${(tol_r2 * 100).toFixed(0)}%<br>`;
-            const r1_min = r1 * (1 - tol_r1);
-            const r1_max = r1 * (1 + tol_r1);
-            const r2_min = r2 * (1 - tol_r2);
-            const r2_max = r2 * (1 + tol_r2);
-            const vout_min_min = vref * (1 + r1_min / r2_min);
-            const vout_min_max = vref * (1 + r1_min / r2_max);
-            const vout_max_min = vref * (1 + r1_max / r2_min);
-            const vout_max_max = vref * (1 + r1_max / r2_max);
-            result += `Vout (R1 min, R2 min): ${vout_min_min.toFixed(3)} V<br>`;
-            result += `Vout (R1 min, R2 max): ${vout_min_max.toFixed(3)} V<br>`;
-            result += `Vout (R1 max, R2 min): ${vout_max_min.toFixed(3)} V<br>`;
-            result += `Vout (R1 max, R2 max): ${vout_max_max.toFixed(3)} V<br>`;
-            result += `<strong>Minimum Vout: ${Math.min(vout_min_min, vout_min_max, vout_max_min, vout_max_max).toFixed(3)} V</strong><br>`;
-            result += `<strong>Maximum Vout: ${Math.max(vout_min_min, vout_min_max, vout_max_min, vout_max_max).toFixed(3)} V</strong><br><br>`;
-            
-            // Temperature variations
-            const ppm_r1 = parseFloat(document.getElementById('ppm_r1').value.replace(',', '.')) || 100;
-            const ppm_r2 = parseFloat(document.getElementById('ppm_r2').value.replace(',', '.')) || 100;
-            vref_tol = parseFloat(document.getElementById('vref_tol').value.replace(',', '.')) || 0.1;
-            result += `<strong>Output Voltage Variations due to Temperature:</strong><br>`;
-            result += `These show how the output voltage changes with temperature, assuming R1 has ${ppm_r1} PPM/°C and R2 has ${ppm_r2} PPM/°C, with nominal temperature of 25°C.<br>`;
-            const temperatures = [-40, 0, 25, 85];
-            let tempVouts = [];
-            for (const t of temperatures) {
-                const deltaT = t - 25;
-                const r1_temp = r1 * (1 + (ppm_r1 / 1e6) * deltaT);
-                const r2_temp = r2 * (1 + (ppm_r2 / 1e6) * deltaT);
-                const vout_temp = vref * (1 + r1_temp / r2_temp);
-                result += `Vout at ${t}°C: ${vout_temp.toFixed(6)} V<br>`;
-                tempVouts.push(vout_temp);
+            const loadCurrent = useLoad ? (voutLoaded / rload) : 0; // A
+
+            // Build top list: use lastCandidates if available (only for auto), else current r1/r2
+            let topList = [];
+            if (activeTab === 'auto' && window._lastCandidates && window._lastCandidates.length) {
+                topList = window._lastCandidates.slice(0,3);
+            } else {
+                topList = [{ r1, r2, r1Series, r2Series, actualVout: voutActual, relError: error, dividerCurrent, powerR1, powerR2 }];
             }
-            const minTempVout = Math.min(...tempVouts);
-            const maxTempVout = Math.max(...tempVouts);
-            result += `<strong>Minimum Vout: ${minTempVout.toFixed(6)} V</strong><br>`;
-            result += `<strong>Maximum Vout: ${maxTempVout.toFixed(6)} V</strong><br><br>`;
-            
-            result += `<strong>Output Voltage Variations due to Vref Tolerance:</strong><br>`;
-            result += `Vref tolerance: ${vref_tol}%<br>`;
-            const vout_vref_min = voutActual * (1 - vref_tol / 100);
-            const vout_vref_max = voutActual * (1 + vref_tol / 100);
-            result += `<strong>Minimum Vout: ${vout_vref_min.toFixed(4)} V</strong><br>`;
-            result += `<strong>Maximum Vout: ${vout_vref_max.toFixed(4)} V</strong><br><br>`;
-            
-            // Combined variations
-            const allVouts = [];
-            for (const t of temperatures) {
-                const deltaT = t - 25;
-                const r1_temp = r1 * (1 + (ppm_r1 / 1e6) * deltaT);
-                const r2_temp = r2 * (1 + (ppm_r2 / 1e6) * deltaT);
-                const r1_min_temp = r1_temp * (1 - tol_r1);
-                const r1_max_temp = r1_temp * (1 + tol_r1);
-                const r2_min_temp = r2_temp * (1 - tol_r2);
-                const r2_max_temp = r2_temp * (1 + tol_r2);
-                const vouts_temp = [
-                    vref * (1 + r1_min_temp / r2_min_temp),
-                    vref * (1 + r1_min_temp / r2_max_temp),
-                    vref * (1 + r1_max_temp / r2_min_temp),
-                    vref * (1 + r1_max_temp / r2_max_temp)
-                ];
-                allVouts.push(...vouts_temp);
+
+            // Compact Top combinations summary (restored)
+            let topHtml = '';
+            if (topList && topList.length) {
+                topHtml = `<div style="margin-bottom:10px;"><strong>Top combinations</strong>`;
+                topList.forEach((c, idx) => {
+                    const v = computeVoutVariation(c.r1, c.r2, c.r1Series, c.r2Series);
+                    const minDevV = +(v.minV - voutDesired).toFixed(4);
+                    const maxDevV = +(v.maxV - voutDesired).toFixed(4);
+                    const minDevPct = +((minDevV / voutDesired) * 100).toFixed(4);
+                    const maxDevPct = +((maxDevV / voutDesired) * 100).toFixed(4);
+                    const candidateErrorPct = +(((c.actualVout - voutDesired) / voutDesired) * 100).toFixed(4);
+                    const tolPctR1 = (c.r1Series === 'E192') ? (tolerance === '0.5' ? '0.50' : (tolerance === '0.25' ? '0.25' : (tolerance === '0.1' ? '0.10' : '0.50'))) : (c.r1Series === 'E96' ? '1.00' : '5.00');
+                    const tolPctR2 = (c.r2Series === 'E192') ? (tolerance === '0.5' ? '0.50' : (tolerance === '0.25' ? '0.25' : (tolerance === '0.1' ? '0.10' : '0.50'))) : (c.r2Series === 'E96' ? '1.00' : '5.00');
+
+                    topHtml += `<div style="border-top:1px solid #eee;padding:8px 0;">
+                        <div style=\"font-weight:700;\">Combination ${idx+1}</div>
+                        <div>R1 = <strong>${formatResistorValue(c.r1)}</strong> <span style=\\"color:green;font-size:12px;\\">(${c.r1Series || 'Unknown'}, ${tolPctR1}% )</span></div>
+                        <div style=\"margin-top:4px;\">R2 = <strong>${formatResistorValue(c.r2)}</strong> <span style=\\"color:green;font-size:12px;\\">(${c.r2Series || 'Unknown'}, ${tolPctR2}% )</span></div>
+                        <div style=\"margin-top:6px;color:#333;\">Vout: ${c.actualVout.toFixed(4)} V (error ${candidateErrorPct}% )</div>
+                        <div style=\"margin-top:6px;color:#666;\">Min: ${v.minV.toFixed(4)} V (${minDevPct}% ) • Max: ${v.maxV.toFixed(4)} V (${maxDevPct}% ) <span style=\\"color:#666;font-size:11px;\\">(worst-case)</span></div>
+                    </div>`;
+                });
+                topHtml += `</div>`;
             }
-            const globalMinVout = Math.min(...allVouts);
-            const globalMaxVout = Math.max(...allVouts);
-            vref_tol = parseFloat(document.getElementById('vref_tol').value.replace(',', '.')) || 0.1;
-            const globalMinVout_corrected = globalMinVout * (1 - vref_tol / 100);
-            const globalMaxVout_corrected = globalMaxVout * (1 + vref_tol / 100);
-            const deltaVout = globalMaxVout_corrected - globalMinVout_corrected;
-            const percentDelta = (deltaVout / voutDesired) * 100;
-            result += `<strong>Combined Variations (Tolerance + Temperature + Vref ${vref_tol}%):</strong><br>`;
-            result += `Worst-case variations considering resistor tolerance, temperature, and Vref tolerance effects across all combinations.<br>`;
-            result += `<strong>Minimum Vout:</strong> <strong>${globalMinVout_corrected.toFixed(4)} V</strong><br>`;
-            result += `<strong>Maximum Vout:</strong> <strong>${globalMaxVout_corrected.toFixed(4)} V</strong><br>`;
-            result += `<strong>Delta Vout:</strong> <strong>${deltaVout.toFixed(4)} V</strong><br>`;
-            result += `<strong>Deviation from Target ${voutDesired.toFixed(3)} V:</strong> <strong>±${(percentDelta / 2).toFixed(2)}%</strong><br><br>`;
-            
-            result += `<hr style="border: none; border-top: 1px solid #ddd; margin: 10px 0;">`;
-            
-            result += `<strong>Divider Current:</strong> ${formatCurrent(dividerCurrent)}<br>`;
-            result += `<strong>Power R1:</strong> ${formatPower(powerR1)}<br>`;
-            result += `<strong>Power R2:</strong> ${formatPower(powerR2)}<br>`;
-            result += `<strong>Total Power:</strong> ${formatPower(totalPower)}<br><br>`;
-            
-            // Рекомендации по мощности резисторов
-            const recommendedPowerR1 = getRecommendedPowerRating(powerR1);
-            const recommendedPowerR2 = getRecommendedPowerRating(powerR2);
-            
-            result += `<strong>Recommended Power Ratings:</strong><br>`;
-            result += `<strong>R1:</strong> ${recommendedPowerR1} resistor<br>`;
-            result += `<strong>R2:</strong> ${recommendedPowerR2} resistor<br><br>`;
-            
-            // Рекомендации по корпусам резисторов
-            const voltageDropR1 = dividerCurrent * r1;
-            const voltageDropR2 = dividerCurrent * r2;
-            const packageR1 = getRecommendedPackageSize(recommendedPowerR1, voltageDropR1, r1);
-            const packageR2 = getRecommendedPackageSize(recommendedPowerR2, voltageDropR2, r2);
-            
-            result += `<strong>Recommended Package Sizes:</strong> (minimal size with 2.5x power margin)<br>`;
-            result += `<strong>R1 packages:</strong><br>`;
-            packageR1.forEach(pkg => {
-                result += `&nbsp;&nbsp;• ${pkg}<br>`;
-            });
-            result += `<strong>R2 packages:</strong><br>`;
-            packageR2.forEach(pkg => {
-                result += `&nbsp;&nbsp;• ${pkg}<br>`;
-            });
-            
+
+            // concise result block formatted per request
+            let result = '';
+
+            // append top-3 combos if available (mobile-friendly stacked layout)
+            // Use topList which works for all modes (auto, manual, ratio)
+            if (topList && topList.length) {
+                const top3 = topList.slice(0,3);
+                const toleranceVal = document.getElementById('resistor_tolerance').value;
+                // Get PPM values from input fields
+                const ppmR1Input = parseFloat(document.getElementById('ppm_r1').value.replace(',', '.')) || 100;
+                const ppmR2Input = parseFloat(document.getElementById('ppm_r2').value.replace(',', '.')) || 100;
+                const deltaT = 125; // -40 to +85
+                const tolPercent = parseFloat(toleranceVal) / 100;
+                
+                for (let i = 0; i < top3.length; i++) {
+                    const combo = top3[i];
+                    const r1 = combo.r1;
+                    const r2 = combo.r2;
+                    const r1Series = combo.r1Series;
+                    const r2Series = combo.r2Series;
+                    const vout = combo.actualVout;
+                    const error = combo.relError;
+                    const divisionRatio = +(r2 / (r1 + r2)).toFixed(6);
+                    
+                    // Worst-case calculations
+                    const r1_tol = r1 * tolPercent;
+                    const r2_tol = r2 * tolPercent;
+                    const r1_temp = r1 * (ppmR1Input / 1e6) * deltaT;
+                    const r2_temp = r2 * (ppmR2Input / 1e6) * deltaT;
+                    
+                    const r1_min = r1 - r1_tol - r1_temp;
+                    const r1_max = r1 + r1_tol + r1_temp;
+                    const r2_min = r2 - r2_tol - r2_temp;
+                    const r2_max = r2 + r2_tol + r2_temp;
+                    
+                    const vout_min = vin * (r2_min / (r1_max + r2_min));
+                    const vout_max = vin * (r2_max / (r1_min + r2_max));
+                    const delta_vout = vout_max - vout_min;
+                    const delta_error = (delta_vout / vout) * 100;
+                    
+                    result += `<div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; width: 100%; box-sizing: border-box;">`;
+                    result += `<h4 style="margin: 0 0 10px 0; color: #333;">Combination ${i+1}</h4>`;
+                    result += `<strong>R1 = ${formatResistorValue(r1)} <small style="color: green;">(${r1Series || 'Custom'} series, ${toleranceVal}%)</small></strong><br>`;
+                    result += `<strong>R2 = ${formatResistorValue(r2)} <small style="color: green;">(${r2Series || 'Custom'} series, ${toleranceVal}%)</small></strong><br>`;
+                    result += `<strong>Vin:</strong> <span style="color: blue;">${vin.toFixed(4)} V</span><br>`;
+                    result += `<strong>Vout:</strong> <span style="color: blue;">${vout.toFixed(4)} V</span>${activeTab !== 'manual' && activeTab !== 'ratio' ? ` <span style="color: red;">(error ${error.toFixed(4)}%)</span>` : ''}<br>`;
+                    result += `<strong>Division ratio:</strong> <span style="color: blue;">${divisionRatio}</span><br>`;
+                    const dividerResistance = (r1 + r2) / 1000; // kΩ
+                    result += `<strong>Divider load:</strong> <span style="color: blue;">${dividerResistance.toFixed(3)} kΩ</span><br><br>`;
+                    result += `<strong>---Worst-case (Tolerance + Temperature)---</strong><br>`;
+                    result += `<small>The resistance of R1 with an accuracy of ${toleranceVal}% is ${ppmR1Input} ppm/°C, and the resistance of R2 with an accuracy of ${toleranceVal}% is ${ppmR2Input} ppm/°C. At temperatures from -40 to +85 degrees Celsius.</small><br>`;
+                    result += `<strong>Minimum Vout:</strong> <strong style="color: #007bff;">${vout_min.toFixed(4)} V</strong><br>`;
+                    result += `<strong>Maximum Vout:</strong> <strong style="color: #007bff;">${vout_max.toFixed(4)} V</strong><br>`;
+                    result += `<strong>Delta Vout:</strong> <strong style="color: #007bff;">${delta_vout.toFixed(4)} V</strong>  (error <strong style="color: #dc3545;">${delta_error.toFixed(4)}%</strong>)<br>`;
+                    result += `</div>`;
+                }
+            }
             document.getElementById('resistor_result').innerHTML = result;
+            
+            // initialize series multiplier if not set
+
+        
+            // initialize series multiplier if not set
+            window._seriesMultiplier = window._seriesMultiplier || 1000;
+
         }
     </script>
     
@@ -1174,10 +1391,11 @@
         </div>
     </div>
 
-    <div class="contact-card" style="background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:15px; margin:20px; font-size:14px; color:#333; text-align:center;">
+    <div class="contact-card" style="background:#e8f5e9; border:1px solid #c8e6c9; border-radius:8px; padding:15px; margin:20px; font-size:14px; color:#333; text-align:center;">
         <h4 style="margin:0 0 8px 0;">Custom Electronics Design & Development</h4>
         <p style="margin:0 0 12px;">Transforming complex concepts into market-ready products with precision engineering.</p>
         <ul style="margin:0 0 8px;padding-left:18px; line-height:1.45; display:inline-block; text-align:left;">
+            <li>⭐ <strong>20+ Years of Experience:</strong> Proven expertise in diverse industries including automotive, industrial automation, medical devices, consumer electronics, and IoT systems.</li>
             <li>🔄 <strong>Full-Cycle R&D:</strong> Comprehensive support from feasibility studies and prototyping to mass production scaling.</li>
             <li>📐 <strong>Circuit Design & Simulation:</strong> Reliable schematic capture tailored to cost and performance requirements.</li>
             <li>🟩 <strong>Advanced PCB Layout:</strong> High-density interconnect (HDI) and multi-layer designs optimized for Signal Integrity and EMC/EMI compliance.</li>
@@ -1185,6 +1403,7 @@
             <li>💻 <strong>Embedded Firmware Development:</strong> Efficient C/C++ firmware for STM32, ESP32, and other architectures (Bare-metal & RTOS).</li>
             <li>🔧 <strong>Mechanical Engineering (SolidWorks):</strong> 3D CAD modeling, thermal management, and custom enclosure design for seamless ECAD/MCAD integration.</li>
         </ul>
+        <p style="margin:10px 0 10px 0; padding:10px 15px; background-color:#c8e6c9; border-radius:6px; font-style: italic; color: #2e7d32;">Contact me to discuss your project, timelines, and cost estimates.</p>
         <p style="margin:10px 0 0 0;">📧 <a href="mailto:serbinovoleg@gmail.com">serbinovoleg@gmail.com</a></p>
         <p style="margin:4px 0 0 0;">🌐 <a href="https://serbinov.github.io/" target="_blank" rel="noopener">Website</a> • <a href="https://github.com/serbinov" target="_blank" rel="noopener">GitHub</a></p>
     </div>
@@ -1193,7 +1412,7 @@
     <footer style="display: none; visibility: hidden; position: absolute; left: -9999px; opacity: 0; font-size: 0; height: 0; width: 0; overflow: hidden; margin-top: 40px; padding: 20px; border-top: 1px solid #e0e0e0; color: #666; line-height: 1.6;">
         <section>
             <h3 style="font-size: 14px; margin-bottom: 10px; color: #2c3e50;">About This Calculator</h3>
-            <p>This <strong>DC/DC feedback resistor calculator</strong> is a professional engineering tool designed for <em>power supply designers</em> and <em>electronics engineers</em>. It helps calculate optimal <strong>R1 and R2 resistor values</strong> for <strong>voltage divider feedback networks</strong> in various <strong>switching regulator topologies</strong> including <strong>buck converters</strong>, <strong>boost converters</strong>, <strong>buck-boost converters</strong>, and other <strong>DC/DC switching power supplies</strong>.</p>
+            <p>This <strong>Resistor Divider Calculator</strong> is a professional engineering tool designed for <em>electronics engineers</em> and designers. It calculates optimal <strong>R1 and R2</strong> values for general-purpose resistive voltage dividers, supports standard resistor selection (E24, E96, E192), and evaluates effects of resistor tolerances, temperature drift, and external loading.</p>
             
             <h4 style="font-size: 13px; margin: 15px 0 8px 0; color: #34495e;">Supported Converter Types</h4>
             <p>The calculator supports feedback design for <strong>step-down regulators (buck)</strong>, <strong>step-up regulators (boost)</strong>, <strong>SEPIC converters</strong>, <strong>Cuk converters</strong>, <strong>flyback converters</strong>, <strong>forward converters</strong>, and other <strong>isolated and non-isolated switching topologies</strong>. It's compatible with popular <strong>PWM controller ICs</strong> and <strong>switching regulator modules</strong>.</p>
@@ -1227,11 +1446,8 @@
         </section>
     </footer>
 
-    <div class="developer-info">
-        <div class="developer-name">Developed by Oleg Serbinov</div>
-        <div>
-            <span style="font-weight:bold;">v1.0</span> • <span>2025-12-30</span>
-        </div>
+    <div style="text-align: center; margin-top: 30px; padding: 15px; font-size: 13px; color: #666;">
+        Developed by Oleg Serbinov • <span style="font-weight:bold;">v1.1</span> • 2026-01-11
     </div>
 </body>
 </html>
