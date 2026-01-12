@@ -17,12 +17,20 @@ Free, professional-grade **resistor divider calculator** with comprehensive desi
 2. **Manual Input**: Calculate with specific resistor values you already have  
 3. **Division Ratio**: Design based on required voltage division coefficient
 
+### ✨ Calculator Features
+
+#### Three Calculation Modes
+1. **Auto Selection**: Automatically finds optimal R1/R2 combinations from standard E24/E96/E192 series
+2. **Manual Input**: Calculate with specific resistor values you already have  
+3. **Division Ratio**: Design based on required voltage division coefficient
+
 #### Advanced Capabilities
 - ✅ Standard resistor series support (E24, E96, E192)
 - ✅ Multiple tolerance options (5%, 1%, 0.5%, 0.25%, 0.1%)
 - ✅ Temperature drift analysis (PPM calculations)
 - ✅ Worst-case tolerance analysis across -40°C to +85°C
 - ✅ Load resistance effects calculation
+- ✅ Google Analytics 4 integration for usage tracking
 
 ### 🚀 Quick Start
 
@@ -60,6 +68,7 @@ Free, professional-grade **resistor divider calculator** with comprehensive desi
 - ✅ Анализ температурного дрейфа (расчеты PPM)
 - ✅ Анализ худшего случая допуска в диапазоне от -40°C до +85°C
 - ✅ Расчет влияния нагрузочного сопротивления
+- ✅ Интеграция Google Analytics 4 для отслеживания использования
 
 ### 🚀 Быстрый старт
 
