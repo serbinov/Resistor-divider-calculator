@@ -435,6 +435,20 @@
                 flex: 0 0 65%;
             }
 
+            /* Make the Known voltage select wider on mobile */
+            #known_voltage {
+                width: 50%;
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+
+            /* Make the Division ratio input the same width as Known voltage on mobile */
+            #division_ratio {
+                width: 50%;
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+
             .input-with-unit .unit {
                 margin-left: 6px;
             }
@@ -508,6 +522,22 @@
                 display: inline-block;
             }
 
+            /* Make the Known voltage select wider on desktop */
+            #known_voltage {
+                width: 70%;
+                max-width: 70%;
+                flex: 0 0 70%;
+                display: inline-block;
+            }
+
+            /* Make the Division ratio input the same width as Known voltage on desktop */
+            #division_ratio {
+                width: 70%;
+                max-width: 70%;
+                flex: 0 0 70%;
+                display: inline-block;
+            }
+
             /* Reduce the label width for that specific row so select doesn't wrap */
             .input-row label[for="resistor_tolerance"] {
                 width: 58%;
@@ -567,7 +597,7 @@
         <div class="input-row">
             <label for="vin">Input Voltage (Vin)</label>
             <div class="input-with-unit move-left">
-                <input type="number" id="vin" step="0.0001" value="5.0000" min="0.0001" max="1000">
+                <input type="number" id="vin" step="0.0001" value="12.0" min="0.0001" max="1000">
                 <span class="unit">V</span>
             </div>
         </div>
@@ -576,7 +606,7 @@
         <div class="input-row">
             <label for="vout_desired">Output Voltage</label>
             <div class="input-with-unit move-left">
-                <input type="number" id="vout_desired" step="0.0001" value="3.3000" min="0.0001" max="1000">
+                <input type="number" id="vout_desired" step="0.0001" value="3.3" min="0.0001" max="1000">
                 <span class="unit">V</span>
             </div>
         </div>
@@ -664,7 +694,7 @@
 
         <div id="ratio-tab" class="tab-content">
             <div class="input-row">
-                <label for="division_ratio">Division coefficient (R2/(R1+R2))</label>
+                <label for="division_ratio">Division coefficient .</label>
                 <div class="input-with-unit move-left">
                     <input type="number" id="division_ratio" step="0.0001" value="0.6600" min="0.0001" max="0.9999">
                 </div>
