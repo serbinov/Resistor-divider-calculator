@@ -32,6 +32,44 @@ Free, professional-grade **resistor divider calculator** with comprehensive desi
 - ✅ Load resistance effects calculation
 - ✅ Google Analytics 4 integration for usage tracking
 
+### 📊 Google Analytics 4 Setup
+
+**Current Tracking ID:** `G-3PHDMJ17WG` (old code from another calculator)
+
+#### How to get a new Tracking ID for this calculator:
+
+1. **Go to Google Analytics:**
+   - Visit [analytics.google.com](https://analytics.google.com)
+   - Sign in with your Google account
+
+2. **Create a new account or select existing:**
+   - If you don't have a GA4 account, click "Start measuring"
+   - If you have one, click "Admin" in the left menu
+
+3. **Create a new property:**
+   - In the "Account" section, click "Create Property"
+   - Select "Web" as the platform
+   - Enter details:
+     - **Property name:** "Resistor Divider Calculator"
+     - **Website URL:** `https://serbinov.github.io/Resistor-divider-calculator/`
+     - **Industry:** "Technology" or "Manufacturing"
+     - **Business size:** Choose appropriate
+
+4. **Get the Tracking ID:**
+   - After creating the property, go to "Admin" → "Data Streams"
+   - Select your web stream
+   - In the "Google Analytics code" section, find "Measurement ID"
+   - This will be your new code like `G-XXXXXXXXXX`
+
+5. **Update the code in HTML:**
+   - Replace the old Tracking ID `G-3PHDMJ17WG` with the new one in `index.html`
+   - In the line with `gtag('config', 'YOUR_NEW_ID');`
+
+6. **Verify it's working:**
+   - Upload changes to GitHub
+   - After 24-48 hours, data will start flowing to GA4
+   - Use "Realtime" report to check
+
 ### 🚀 Quick Start
 
 1. Visit **[Resistor Divider Calculator](https://serbinov.github.io/Resistor-divider-calculator/)**
@@ -69,6 +107,44 @@ Free, professional-grade **resistor divider calculator** with comprehensive desi
 - ✅ Анализ худшего случая допуска в диапазоне от -40°C до +85°C
 - ✅ Расчет влияния нагрузочного сопротивления
 - ✅ Интеграция Google Analytics 4 для отслеживания использования
+
+### 📊 Настройка Google Analytics 4
+
+**Текущий Tracking ID:** `G-3PHDMJ17WG` (старый код от другого калькулятора)
+
+#### Как получить новый Tracking ID для этого калькулятора:
+
+1. **Перейдите на сайт Google Analytics:**
+   - Откройте [analytics.google.com](https://analytics.google.com)
+   - Войдите в свой Google аккаунт
+
+2. **Создайте новый аккаунт или выберите существующий:**
+   - Если у вас нет аккаунта GA4, нажмите "Начать измерения"
+   - Если есть, нажмите "Администратор" в левом меню
+
+3. **Создайте новое свойство:**
+   - В разделе "Аккаунт" нажмите "Создать свойство"
+   - Выберите "Веб-сайт" как платформу
+   - Введите данные:
+     - **Название свойства:** "Resistor Divider Calculator"
+     - **URL веб-сайта:** `https://serbinov.github.io/Resistor-divider-calculator/`
+     - **Отрасль:** "Технологии" или "Производство"
+     - **Размер компании:** Выберите подходящий
+
+4. **Получите Tracking ID:**
+   - После создания свойства перейдите в "Администратор" → "Потоки данных"
+   - Выберите ваш веб-поток
+   - В разделе "Код Google Analytics" найдите "Идентификатор измерения" (Measurement ID)
+   - Это будет новый код вида `G-XXXXXXXXXX`
+
+5. **Обновите код в HTML:**
+   - Замените старый Tracking ID `G-3PHDMJ17WG` на новый в файле `index.html`
+   - В строках с `gtag('config', 'ВАШ_НОВЫЙ_ID');`
+
+6. **Проверьте работу:**
+   - Загрузите изменения на GitHub
+   - Через 24-48 часов данные начнут поступать в GA4
+   - Используйте "Отчет в реальном времени" для проверки
 
 ### 🚀 Быстрый старт
 
