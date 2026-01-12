@@ -34,7 +34,7 @@ Free, professional-grade **resistor divider calculator** with comprehensive desi
 
 ### 📊 Google Analytics 4 Setup
 
-**Current Tracking ID:** `G-3PHDMJ17WG` (old code from another calculator)
+**Current Tracking ID:** `G-WBM5CSL69M` (updated for this calculator)
 
 #### How to get a new Tracking ID for this calculator:
 
@@ -110,7 +110,7 @@ Free, professional-grade **resistor divider calculator** with comprehensive desi
 
 ### 📊 Настройка Google Analytics 4
 
-**Текущий Tracking ID:** `G-3PHDMJ17WG` (старый код от другого калькулятора)
+**Текущий Tracking ID:** `G-WBM5CSL69M` (обновлено для этого калькулятора)
 
 #### Как получить новый Tracking ID для этого калькулятора:
 
