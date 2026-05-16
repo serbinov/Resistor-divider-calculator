@@ -826,10 +826,8 @@
         function formatPower(power) {
             if (power >= 1) {
                 return `${power.toFixed(3)} W`;
-            } else if (power >= 0.001) {
-                return `${(power * 1000).toFixed(2)} mW`;
             } else {
-                return `${(power * 1000000).toFixed(1)} µW`;
+                return `${(power * 1000).toFixed(3)} mW`;
             }
         }
 
@@ -913,23 +911,23 @@
             
             // Рекомендации по корпусам SMD резисторов
             const smdPackages = [
-                { size: '0201', power: 0.05, voltage: 15, name: '0201 (0.6×0.3mm)' },
-                { size: '0402', power: 0.0625, voltage: 50, name: '0402 (1.0×0.5mm)' },
-                { size: '0603', power: 0.1, voltage: 50, name: '0603 (1.6×0.8mm)' },
-                { size: '0805', power: 0.125, voltage: 150, name: '0805 (2.0×1.25mm)' },
-                { size: '1206', power: 0.25, voltage: 200, name: '1206 (3.2×1.6mm)' },
-                { size: '1210', power: 0.5, voltage: 200, name: '1210 (3.2×2.5mm)' },
-                { size: '2010', power: 0.75, voltage: 200, name: '2010 (5.0×2.5mm)' },
-                { size: '2512', power: 1.0, voltage: 200, name: '2512 (6.4×3.2mm)' }
+                { size: '0201', power: 0.05, voltage: 15, maxVoltage: 50, label: '0201: 50mW/15V (max. 50V)', name: '0201 (0.6×0.3mm)' },
+                { size: '0402', power: 0.0625, voltage: 50, maxVoltage: 100, label: '0402: 62.5mW/50V (max. 100V)', name: '0402 (1.0×0.5mm)' },
+                { size: '0603', power: 0.1, voltage: 50, maxVoltage: 100, label: '0603: 100mW/50V (max. 100V)', name: '0603 (1.6×0.8mm)' },
+                { size: '0805', power: 0.125, voltage: 150, maxVoltage: 200, label: '0805: 125mW/150V (max. 200V)', name: '0805 (2.0×1.25mm)' },
+                { size: '1206', power: 0.25, voltage: 200, maxVoltage: 400, label: '1206: 250mW/200V (max. 400V)', name: '1206 (3.2×1.6mm)' },
+                { size: '1210', power: 0.5, voltage: 200, maxVoltage: 400, label: '1210: 500mW/200V (max. 400V)', name: '1210 (3.2×2.5mm)' },
+                { size: '2010', power: 0.75, voltage: 200, maxVoltage: 400, label: '2010: 750mW/200V (max. 400V)', name: '2010 (5.0×2.5mm)' },
+                { size: '2512', power: 1.0, voltage: 200, maxVoltage: 400, label: '2512: 1W/200V (max. 400V)', name: '2512 (6.4×3.2mm)' }
             ];
             
             // Рекомендации по выводным резисторам
             const throughHolePackages = [
-                { type: 'Axial 1/4W', power: 0.25, voltage: 500, name: 'Axial 1/4W (Ø2.3×6mm)' },
-                { type: 'Axial 1/2W', power: 0.5, voltage: 500, name: 'Axial 1/2W (Ø3.2×9mm)' },
-                { type: 'Axial 1W', power: 1.0, voltage: 500, name: 'Axial 1W (Ø3.6×10mm)' },
-                { type: 'Axial 2W', power: 2.0, voltage: 500, name: 'Axial 2W (Ø5×12mm)' },
-                { type: 'Axial 5W', power: 5.0, voltage: 500, name: 'Axial 5W (Ø7×16mm)' }
+                { type: 'Axial 1/4W', power: 0.25, voltage: 500, label: 'Axial 1/4W: 250mW/500V', name: 'Axial 1/4W (Ø2.3×6mm)' },
+                { type: 'Axial 1/2W', power: 0.5, voltage: 500, label: 'Axial 1/2W: 500mW/500V', name: 'Axial 1/2W (Ø3.2×9mm)' },
+                { type: 'Axial 1W', power: 1.0, voltage: 500, label: 'Axial 1W: 1W/500V', name: 'Axial 1W (Ø3.6×10mm)' },
+                { type: 'Axial 2W', power: 2.0, voltage: 500, label: 'Axial 2W: 2W/500V', name: 'Axial 2W (Ø5×12mm)' },
+                { type: 'Axial 5W', power: 5.0, voltage: 500, label: 'Axial 5W: 5W/500V', name: 'Axial 5W (Ø7×16mm)' }
             ];
             
             // Проверяем высоковольтные требования (>100В)
@@ -941,7 +939,7 @@
             for (const pkg of smdPackages) {
                 if (pkg.power >= powerW && pkg.voltage >= voltage) {
                     const note = highVoltage && pkg.voltage < 150 ? ' ⚠️ High voltage' : '';
-                    recommendations.push(`SMD ${pkg.name}${note}`);
+                    recommendations.push(`SMD ${pkg.label}${note}`);
                     break; // Берем минимально подходящий
                 }
             }
@@ -949,7 +947,7 @@
             // Ищем подходящие выводные корпуса
             for (const pkg of throughHolePackages) {
                 if (pkg.power >= powerW && pkg.voltage >= voltage) {
-                    recommendations.push(`Through-hole ${pkg.name}`);
+                    recommendations.push(`Through-hole ${pkg.label}`);
                     break; // Берем минимально подходящий
                 }
             }
@@ -1058,9 +1056,9 @@
                             const error = Math.abs(actualVout - voutDesired);
                             const relError = error / voutDesired * 100;
                             const totalResistanceCandidate = r1Val + effectiveR2;
-                            const dividerCurrentCandidate = actualVout / totalResistanceCandidate;
+                            const dividerCurrentCandidate = vin / totalResistanceCandidate;
                             const powerR1Candidate = Math.pow(dividerCurrentCandidate, 2) * r1Val;
-                            const powerR2Candidate = Math.pow(dividerCurrentCandidate, 2) * r2Candidate;
+                            const powerR2Candidate = Math.pow(actualVout, 2) / r2Candidate;
                             const loadCurrentCandidate = useLoad ? (loadedVout / rload) : 0;
                             
                             candidates.push({
@@ -1275,12 +1273,13 @@
 
             // Current and power calculations (use effective network)
             const totalResistance = r1 + r2_effective; // Ohm
-            const dividerCurrent = voutActual / totalResistance; // A
+            // Use Vin to compute divider current through the series network
+            const dividerCurrent = vin / totalResistance; // A
             const powerR1 = Math.pow(dividerCurrent, 2) * r1; // W
-            // power on R2 remains based on current thru R2 (note in loaded case some current goes to load)
-            const powerR2 = Math.pow(dividerCurrent, 2) * r2; // W
+            // power on R2 is based on Vout across R2 (loaded or unloaded)
+            const powerR2 = Math.pow(voutActual, 2) / r2; // W
             const totalPower = powerR1 + powerR2; // W
-            const loadCurrent = useLoad ? (voutLoaded / rload) : 0; // A
+            const loadCurrent = useLoad ? (voutActual / rload) : 0; // A
 
             // Build top list: use lastCandidates if available (only for auto), else current r1/r2
             let topList = [];
@@ -1361,8 +1360,18 @@
                     const r2PowerText = formatPower(combo.powerR2);
                     const pkgForR1 = getRecommendedPackageSize(combo.powerR1, vin - vout, r1)[0];
                     const pkgForR2 = getRecommendedPackageSize(combo.powerR2, vout, r2)[0];
-                    result += `<strong>R1 = ${formatResistorValue(r1)} <small style="color: green;">(${toleranceVal}%)</small>. Power losses ${r1PowerText} · Package: ${pkgForR1}</strong><br>`;
-                    result += `<strong>R2 = ${formatResistorValue(r2)} <small style="color: green;">(${toleranceVal}%)</small>. Power losses ${r2PowerText} · Package: ${pkgForR2}</strong><br>`;
+                    const shortPkg = (pkg) => {
+                        if (!pkg) return '';
+                        const parts = pkg.split(':');
+                        const name = parts[0].trim();
+                        const rest = parts.slice(1).join(':').trim();
+                        const ratings = rest.split('(')[0].trim();
+                        // If name looks numeric (e.g., '0201'), prefix with SMD
+                        const displayName = /^\d+$/.test(name) ? `SMD ${name}` : name;
+                        return `${displayName} (${ratings})`;
+                    };
+                    result += `<strong>R1:</strong> ${formatResistorValue(r1)} (${toleranceVal}%), P loss: ${r1PowerText}, Case: ${shortPkg(pkgForR1)}<br>`;
+                    result += `<strong>R2:</strong> ${formatResistorValue(r2)} (${toleranceVal}%), P loss: ${r2PowerText}, Case: ${shortPkg(pkgForR2)}<br>`;
                     result += `<strong>Vin:</strong> <span style="color: blue;">${vin.toFixed(4)} V</span><br>`;
                     result += `<strong>Vout:</strong> <span style="color: blue;">${vout.toFixed(4)} V</span>${activeTab !== 'manual' && activeTab !== 'ratio' ? ` <span style="color: red;">(error ${error.toFixed(4)}%)</span>` : ''}<br>`;
                     result += `<strong>Division ratio:</strong> <span style="color: blue;">${divisionRatio}</span><br>`;
@@ -1370,6 +1379,7 @@
                     result += `<strong>Divider load:</strong> <span style="color: blue;">${dividerResistance.toFixed(3)} kΩ</span><br>`;
                     result += `<strong>---Worst-case (Tolerance + Temperature)---</strong><br>`;
                     result += `<small>The resistance of R1 with an accuracy of ${toleranceVal}% is ${ppmR1Input} ppm/°C, and the resistance of R2 with an accuracy of ${toleranceVal}% is ${ppmR2Input} ppm/°C. At temperatures from -40 to +85 degrees Celsius.</small><br>`;
+                    result += `<strong>Minimum Vout:</strong> <strong style="color: #007bff;">${vout_min.toFixed(4)} V</strong><br>`;
                     result += `<strong>Maximum Vout:</strong> <strong style="color: #007bff;">${vout_max.toFixed(4)} V</strong><br>`;
                     result += `<strong>Delta Vout:</strong> <strong style="color: #007bff;">${delta_vout.toFixed(4)} V</strong>  (error <strong style="color: #dc3545;">${delta_error.toFixed(4)}%</strong>)<br>`;
                     result += `</div>`;

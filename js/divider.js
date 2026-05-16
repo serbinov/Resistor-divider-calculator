@@ -157,9 +157,9 @@ export function calculateDivider({
           const error = Math.abs(actualVout - voutDesired);
           const relError = error / voutDesired * 100;
           const totalResistanceCandidate = r1Val + effectiveR2;
-          const dividerCurrentCandidate = actualVout / totalResistanceCandidate;
+          const dividerCurrentCandidate = vin / totalResistanceCandidate;
           const powerR1Candidate = Math.pow(dividerCurrentCandidate, 2) * r1Val;
-          const powerR2Candidate = Math.pow(dividerCurrentCandidate, 2) * r2Candidate;
+          const powerR2Candidate = Math.pow(actualVout, 2) / r2Candidate;
           const loadCurrentCandidate = useLoad ? (loadedVout / rload) : 0;
           candidates.push({
             r1: r1Val,
@@ -201,11 +201,12 @@ export function calculateDivider({
   const relError = +((absError / voutDesired) * 100).toFixed(4);
   const divisionCoeff = +(r2 / (r1 + r2)).toFixed(6);
   const totalResistance = r1 + r2_effective;
-  const dividerCurrent = totalResistance > 0 ? +(voutActual / totalResistance).toFixed(4) : 0;
-  const powerR1 = +Math.pow(dividerCurrent, 2) * r1;
-  const powerR2 = +Math.pow(dividerCurrent, 2) * r2;
+  const dividerCurrentExact = totalResistance > 0 ? vin / totalResistance : 0;
+  const dividerCurrent = totalResistance > 0 ? +dividerCurrentExact.toFixed(4) : 0;
+  const powerR1 = +Math.pow(dividerCurrentExact, 2) * r1;
+  const powerR2 = +(Math.pow(voutActual, 2) / r2);
 
   return {
-    r1, r2, r1Series, r2Series, voutActual: voutActualR, absError, relError, dividerCurrent, powerR1, powerR2, divisionCoeff
+    r1, r2, r1Series, r2Series, voutActual: voutActualR, absError, relError, dividerCurrent, dividerCurrentExact, powerR1, powerR2, divisionCoeff
   };
 }

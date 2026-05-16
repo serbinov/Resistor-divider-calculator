@@ -155,9 +155,9 @@ function calculateDivider({
           const error = Math.abs(actualVout - voutDesired);
           const relError = error / voutDesired * 100;
           const totalResistanceCandidate = r1Val + effectiveR2;
-          const dividerCurrentCandidate = actualVout / totalResistanceCandidate;
+          const dividerCurrentCandidate = vin / totalResistanceCandidate;
           const powerR1Candidate = Math.pow(dividerCurrentCandidate, 2) * r1Val;
-          const powerR2Candidate = Math.pow(dividerCurrentCandidate, 2) * r2Candidate;
+          const powerR2Candidate = Math.pow(actualVout, 2) / r2Candidate;
           const loadCurrentCandidate = useLoad ? (loadedVout / rload) : 0;
           candidates.push({
             r1: r1Val,
@@ -199,13 +199,69 @@ function calculateDivider({
   const relError = +((absError / voutDesired) * 100).toFixed(4);
   const divisionCoeff = +(r2 / (r1 + r2)).toFixed(6);
   const totalResistance = r1 + r2_effective;
-  const dividerCurrent = totalResistance > 0 ? +(voutActual / totalResistance).toFixed(4) : 0;
-  const powerR1 = +Math.pow(dividerCurrent, 2) * r1;
-  const powerR2 = +Math.pow(dividerCurrent, 2) * r2;
+  const dividerCurrentExact = totalResistance > 0 ? vin / totalResistance : 0;
+  const dividerCurrent = totalResistance > 0 ? +dividerCurrentExact.toFixed(4) : 0;
+  const powerR1 = +Math.pow(dividerCurrentExact, 2) * r1;
+  const powerR2 = +(Math.pow(voutActual, 2) / r2);
 
   return {
-    r1, r2, r1Series, r2Series, voutActual: voutActualR, absError, relError, dividerCurrent, powerR1, powerR2, divisionCoeff
+    r1, r2, r1Series, r2Series, voutActual: voutActualR, absError, relError, dividerCurrent, dividerCurrentExact, powerR1, powerR2, divisionCoeff
   };
 }
 
-module.exports = { E24, E96, E192, generateESeries, getSeriesForValue, findClosestResistor, formatResistorValue, calculateDivider };
+function getRecommendedPackageSize(powerRating, voltage, resistorValue) {
+  // Convert powerRating (W or numeric) to numeric watts
+  let powerW = 0;
+  if (typeof powerRating === 'string') {
+    if (powerRating.includes('mW')) powerW = parseFloat(powerRating) / 1000;
+    else if (powerRating.includes('W')) powerW = parseFloat(powerRating);
+    else powerW = parseFloat(powerRating);
+  } else {
+    powerW = Number(powerRating) || 0.001;
+  }
+
+  const smdPackages = [
+    { size: '0201', power: 0.05, voltage: 15, maxVoltage: 50, label: '0201: 50mW/15V (max. 50V)' },
+    { size: '0402', power: 0.0625, voltage: 50, maxVoltage: 100, label: '0402: 62.5mW/50V (max. 100V)' },
+    { size: '0603', power: 0.1, voltage: 50, maxVoltage: 100, label: '0603: 100mW/50V (max. 100V)' },
+    { size: '0805', power: 0.125, voltage: 150, maxVoltage: 200, label: '0805: 125mW/150V (max. 200V)' },
+    { size: '1206', power: 0.25, voltage: 200, maxVoltage: 400, label: '1206: 250mW/200V (max. 400V)' },
+    { size: '1210', power: 0.5, voltage: 200, maxVoltage: 400, label: '1210: 500mW/200V (max. 400V)' },
+    { size: '2010', power: 0.75, voltage: 200, maxVoltage: 400, label: '2010: 750mW/200V (max. 400V)' },
+    { size: '2512', power: 1.0, voltage: 200, maxVoltage: 400, label: '2512: 1W/200V (max. 400V)' }
+  ];
+
+  const throughHolePackages = [
+    { type: 'Axial 1/4W', power: 0.25, voltage: 500, label: 'Axial 1/4W: 250mW/500V' },
+    { type: 'Axial 1/2W', power: 0.5, voltage: 500, label: 'Axial 1/2W: 500mW/500V' },
+    { type: 'Axial 1W', power: 1.0, voltage: 500, label: 'Axial 1W: 1W/500V' },
+    { type: 'Axial 2W', power: 2.0, voltage: 500, label: 'Axial 2W: 2W/500V' },
+    { type: 'Axial 5W', power: 5.0, voltage: 500, label: 'Axial 5W: 5W/500V' }
+  ];
+
+  const highVoltage = voltage > 100;
+  const recommendations = [];
+
+  for (const pkg of smdPackages) {
+    if (pkg.power >= powerW && pkg.voltage >= voltage) {
+      const note = highVoltage && pkg.voltage < 150 ? ' ⚠️ High voltage' : '';
+      recommendations.push(`${pkg.label}${note}`);
+      break;
+    }
+  }
+
+  for (const pkg of throughHolePackages) {
+    if (pkg.power >= powerW && pkg.voltage >= voltage) {
+      recommendations.push(pkg.label);
+      break;
+    }
+  }
+
+  if (voltage > 200) recommendations.push('🔥 Consider high-voltage rated resistors');
+  if (powerW > 2) recommendations.push('🌡️ Consider power resistors with heat sinks');
+
+  return recommendations.length > 0 ? recommendations : ['Contact manufacturer for custom solution'];
+}
+
+module.exports = { E24, E96, E192, generateESeries, getSeriesForValue, findClosestResistor, formatResistorValue, calculateDivider, getRecommendedPackageSize };
+ 
