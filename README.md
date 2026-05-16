@@ -59,9 +59,77 @@ The result block shows the best resistor combination, power losses, package reco
 
 ## Calculation Modes
 
-- **Auto Selection**: searches standard resistor values and picks the best match.
-- **Manual Input**: uses the exact values given for `R1` and `R2`.
-- **Division Ratio**: computes missing voltage from a chosen ratio and known voltage.
+- **Auto Selection**: the calculator generates candidate `R2` values from the selected resistor series and search range, calculates the required `R1` for each candidate, snaps `R1` to the nearest standard resistor, and chooses the pair with the lowest output error.
+- **Manual Input**: the calculator uses the exact values entered for `R1` and `R2`, then computes `Vout`, error, current, and power dissipation.
+- **Division Ratio**: the calculator computes the missing voltage from the chosen ratio and known voltage, then finds the best standard resistor pair for the resulting ratio.
+
+---
+
+## How It Works
+
+### Core calculation
+
+The calculator uses the basic voltage divider formula:
+
+- `Vout = Vin × R2 / (R1 + R2)`
+
+For a desired output voltage, the ideal resistor ratio is:
+
+- `R1/R2 = (Vin/Vout) - 1`
+
+When a standard resistor series is selected, the app searches for values that satisfy this ratio while staying within the specified resistor range.
+
+### Auto mode algorithm
+
+1. Convert the minimum and maximum resistor range from kΩ to ohms.
+2. Generate candidate `R2` values from the selected standard series and decades.
+3. For each `R2` candidate, compute the ideal `R1` value.
+4. Snap `R1` to the closest available standard resistor.
+5. Evaluate the resulting `Vout` with or without load.
+6. Compute absolute and relative error, divider current, and power dissipation.
+7. Choose the best candidate by error and display the top combinations.
+
+### Known resistor mode
+
+- If `R1` is fixed, the calculator computes `R2 = R1 / ((Vin/Vout) - 1)`.
+- If `R2` is fixed, it computes `R1 = R2 × ((Vin/Vout) - 1)`.
+- The app then checks whether the computed resistor is a standard value and reports the closest match.
+
+### Manual mode
+
+- Uses the exact entered values for `R1` and `R2`.
+- Computes actual output voltage from `Vin` and the divider.
+- Displays whether the provided resistors produce the expected `Vout`.
+
+### Division ratio mode
+
+- If `Vin` is known, `Vout = Vin × ratio`.
+- If `Vout` is known, `Vin = Vout / ratio`.
+- The calculator then performs an auto selection for the resulting voltage pair.
+
+### Load impact
+
+- When `Rload` is entered, the effective lower resistor becomes `R2 || Rload`.
+- The app applies the parallel resistor formula:
+
+  - `R2_effective = 1 / (1/R2 + 1/Rload)`
+
+- The resulting loaded output voltage is used for error and power calculations.
+
+### Power and package recommendations
+
+- Divider current is computed as:
+  - `I = Vout / (R1 + R2_effective)`
+- Power in each resistor is:
+  - `P_R1 = I^2 × R1`
+  - `P_R2 = I^2 × R2`
+- Recommended package size is selected from common SMD and through-hole options based on estimated power and voltage.
+
+### Tolerance and temperature drift
+
+- The calculator supports tolerance selection for common resistor series.
+- It also accepts `PPM` values for `R1` and `R2` to estimate temperature drift.
+- Worst-case output variation is calculated using resistor tolerance plus temperature coefficient across the range from -40°C to +85°C.
 
 ---
 
@@ -100,23 +168,6 @@ The result block shows the best resistor combination, power losses, package reco
 - `calculateDivider()` handles all modes and returns normalized results.
 - `findClosestResistor()` selects nearest standard resistor values.
 - `generateESeries()` builds the `E192` series.
-
----
-
-## Russian Section / Русское описание
-
-### Описание
-
-Это веб-приложение для расчёта двухрезисторного делителя напряжения. Оно подбирает значения `R1` и `R2` для заданных `Vin` и `Vout`, поддерживает стандартные ряды резисторов и рассчитывает мощность, допуск и температурный дрейф.
-
-### Возможности
-
-- Автоматический подбор номиналов из `E24`, `E96`, `E192`
-- Ручной ввод `R1` и `R2`
-- Режим одного известного резистора
-- Расчёт с учётом нагрузки (`Rload`)
-- Оценка мощности и рекомендации по корпусу
-- Оценка изменений `Vout` при допуске и температурном дрейфе
 
 ---
 
