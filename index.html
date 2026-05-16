@@ -1357,16 +1357,19 @@
                     
                     result += `<div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; width: 100%; box-sizing: border-box;">`;
                     result += `<h4 style="margin: 0 0 10px 0; color: #333;">Combination ${i+1}</h4>`;
-                    result += `<strong>R1 = ${formatResistorValue(r1)} <small style="color: green;">(${r1Series || 'Custom'} series, ${toleranceVal}%)</small></strong><br>`;
-                    result += `<strong>R2 = ${formatResistorValue(r2)} <small style="color: green;">(${r2Series || 'Custom'} series, ${toleranceVal}%)</small></strong><br>`;
+                    const r1PowerText = formatPower(combo.powerR1);
+                    const r2PowerText = formatPower(combo.powerR2);
+                    const pkgForR1 = getRecommendedPackageSize(combo.powerR1, vin - vout, r1)[0];
+                    const pkgForR2 = getRecommendedPackageSize(combo.powerR2, vout, r2)[0];
+                    result += `<strong>R1 = ${formatResistorValue(r1)} <small style="color: green;">(${toleranceVal}%)</small>. Power losses ${r1PowerText} · Package: ${pkgForR1}</strong><br>`;
+                    result += `<strong>R2 = ${formatResistorValue(r2)} <small style="color: green;">(${toleranceVal}%)</small>. Power losses ${r2PowerText} · Package: ${pkgForR2}</strong><br>`;
                     result += `<strong>Vin:</strong> <span style="color: blue;">${vin.toFixed(4)} V</span><br>`;
                     result += `<strong>Vout:</strong> <span style="color: blue;">${vout.toFixed(4)} V</span>${activeTab !== 'manual' && activeTab !== 'ratio' ? ` <span style="color: red;">(error ${error.toFixed(4)}%)</span>` : ''}<br>`;
                     result += `<strong>Division ratio:</strong> <span style="color: blue;">${divisionRatio}</span><br>`;
                     const dividerResistance = (r1 + r2) / 1000; // kΩ
-                    result += `<strong>Divider load:</strong> <span style="color: blue;">${dividerResistance.toFixed(3)} kΩ</span><br><br>`;
+                    result += `<strong>Divider load:</strong> <span style="color: blue;">${dividerResistance.toFixed(3)} kΩ</span><br>`;
                     result += `<strong>---Worst-case (Tolerance + Temperature)---</strong><br>`;
                     result += `<small>The resistance of R1 with an accuracy of ${toleranceVal}% is ${ppmR1Input} ppm/°C, and the resistance of R2 with an accuracy of ${toleranceVal}% is ${ppmR2Input} ppm/°C. At temperatures from -40 to +85 degrees Celsius.</small><br>`;
-                    result += `<strong>Minimum Vout:</strong> <strong style="color: #007bff;">${vout_min.toFixed(4)} V</strong><br>`;
                     result += `<strong>Maximum Vout:</strong> <strong style="color: #007bff;">${vout_max.toFixed(4)} V</strong><br>`;
                     result += `<strong>Delta Vout:</strong> <strong style="color: #007bff;">${delta_vout.toFixed(4)} V</strong>  (error <strong style="color: #dc3545;">${delta_error.toFixed(4)}%</strong>)<br>`;
                     result += `</div>`;
